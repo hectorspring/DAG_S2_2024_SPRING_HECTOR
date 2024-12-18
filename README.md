@@ -64,7 +64,7 @@ schema_entradas y schema_resultados son luego usados como nombre para las variab
 Script SQL
 ---
 
-Lo importante en este caso es conocer los archivos SHP y sus columnas los archivos deben tener al menos las siguientes columnas
+Lo importante en este caso es conocer los archivos SHP y sus columnas. Los archivos deben tener al menos las siguientes columnas:
 
 - Archivo PRC: Debe contener la columna ZONA que corresponde a la zonificación propia de un PRC y la columna UPERM que en muchos casos es un descripción de zonificación, de lo contrario se debe cambiar esta columna en el script para que concuerde con la info minima. El script busca la coincidencia de "comercio" en la columna UPERM, es imperativo que el usuario asegure que existe esta columna.
 - Manzanas censales: Respecto a las manzanas estas deben contener una columna que contenga población, en el script se llama a la columna por el nombre "TOTAL_PERS", dado que se desarrolló con la capa de manzanas entregada por el Instituto Nacional de Estadistica (INE) de Chile, por lo que se recomienda su uso: https://www.ine.gob.cl/herramientas/portal-de-mapas/geodatos-abiertos.

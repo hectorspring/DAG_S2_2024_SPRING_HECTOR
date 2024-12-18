@@ -9,6 +9,7 @@ Primeramente, respecto a liberias el script identifica si estas están o no en e
 - geopandas": "0.14.1
 - sqlalchemy": "2.0.25
 - psycopg2-binary: "2.9.10"
+
 Las capas necesarias para el uso de este script son:
 - Capa de predios (type: Polygon), Capa de Plan Regulador Comunal (PRC) (type: Polygon), capa Manzanas censales (type: Polygon) y capa de servicio (type: point). En mi caso, farmacias.
 
@@ -23,12 +24,12 @@ El archivo Python contiene "placeholders" que facilitan la interacción con SQL.
         "predios": r"ruta_predios",
         "prc": r"ruta_prc",
         "manzanas_censales": r"ruta_manzanas_censales",
-        "farmacias": r"ruta_farmacias"
+        "servicio": r"ruta_farmacias"
       }
       placeholders = {
         "schema": esquema_entradas,
         "schema_resultados": esquema_resultados,
-        "tabla_farmacias": "farmacias",
+        "tabla_servicio": "servicio",
         "tabla_manzanas": "prc",
         "tabla_prc": "manzanas_censales",
         "tabla_predios": "predios",
@@ -44,13 +45,13 @@ Contiene los siguientes elementos:
         "host": "localhost",
         "port": 5432,
         "user": "postgres",
-        "passwd": "pgadmin",
-        "db": "PEP_DAG2",
+        "passwd": "contraseña",
+        "db": "Nombre base de datos",
         "schema_entradas": "datos",
         "schema_resultados": "resultados"}
     }
 - host corresponde a la conexión con la base de datos (localhost por defecto, pensado en su uso local)
-- port: Corresponde al puerto
+- port: Corresponde al puerto (5432 por defecto, pensado en su uso local)
 - user: Corresponde al nombre de usuario en el servidor de Postgres
 - paswd: Corresponde a la contraseña del servidor Postgres
 - db: Corresponde a la base de datos donde se desarrollaran todos los procesos
